@@ -577,37 +577,56 @@
         }
 
         /* ================= SISTEM DRAG & DROP DESKTOP ================= */
-        function setUpDragAndDrop() {
-            const kad = document.getElementById('active-animal-card');
-            const dropZones = document.querySelectorAll('.drop-zone');
+        
+function setUpDragAndDrop() {
+    const kad = document.getElementById('active-animal-card');
+    const dropZones = document.querySelectorAll('.drop-zone');
 
-            kad.addEventListener('dragstart', function(e) {
-                e.dataTransfer.setData('text/plain', senaraiMainHaiwan[indexSemasa].diet);
-                kad.classList.add('opacity-50');
-            });
+    if (!kad) return;
 
-            kad.addEventListener('dragend', function() {
-                kad.classList.remove('opacity-50');
-            });
+    kad.setAttribute('draggable', 'true');
 
-            dropZones.forEach(zone => {
-                zone.addEventListener('dragover', function(e) {
-                    e.preventDefault();
-                    zone.classList.add('dragover');
-                });
+    kad.addEventListener('dragstart', function(e) {
+        e.dataTransfer.setData('text/plain', 'animal');
+        e.dataTransfer.effectAllowed = 'move';
+        kad.classList.add('opacity-50');
+    });
 
-                zone.addEventListener('dragleave', function() {
-                    zone.classList.remove('dragover');
-                });
+    kad.addEventListener('dragend', function() {
+        kad.classList.remove('opacity-50');
+        dropZones.forEach(zone => zone.classList.remove('dragover'));
+    });
 
-                zone.addEventListener('drop', function(e) {
-                    e.preventDefault();
-                    zone.classList.remove('dragover');
-                    const targetDiet = zone.getAttribute('data-diet');
-                    prosesJawapan(targetDiet);
-                });
-            });
-        }
+    dropZones.forEach(zone => {
+        zone.addEventListener('dragenter', function(e) {
+            e.preventDefault();
+            zone.classList.add('dragover');
+        });
+
+        zone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            zone.classList.add('dragover');
+        });
+
+        zone.addEventListener('dragleave', function(e) {
+            if (!zone.contains(e.relatedTarget)) {
+                zone.classList.remove('dragover');
+            }
+        });
+
+        zone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            zone.classList.remove('dragover');
+
+            const targetDiet = zone.getAttribute('data-diet');
+            if (targetDiet) {
+                prosesJawapan(targetDiet);
+            }
+        });
+    });
+}
 
         /* ================= PILIHAN JAWAPAN (BUTANG ATAU JATUHAN) ================= */
         function pilihKategoriButang(dietPilihan) {
