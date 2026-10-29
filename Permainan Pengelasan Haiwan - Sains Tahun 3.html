@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)file:///C:/Users/User/Downloads/permainan_pengelasan_haiwan_sains_tahun_3%20(2).html -->
+<html lang="ms"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Pengelasan Haiwan - Sains Tahun 3</title>
+    <!-- Tailwind CSS -->
+    <script src="./Permainan Pengelasan Haiwan - Sains Tahun 3_files/saved_resource"></script>
+    <!-- Google Fonts: Fredoka One untuk fon mesra kanak-kanak -->
+    <link href="./Permainan Pengelasan Haiwan - Sains Tahun 3_files/css2" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="./Permainan Pengelasan Haiwan - Sains Tahun 3_files/all.min.css" rel="stylesheet">
+    <!-- Canvas Confetti untuk sambutan jawapan betul -->
+    <script src="./Permainan Pengelasan Haiwan - Sains Tahun 3_files/confetti.browser.min.js.download"></script>
+
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #e8f5e9;
+            background-image: radial-gradient(#c8e6c9 1px, transparent 1px), radial-gradient(#c8e6c9 1px, #e8f5e9 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        .jungle-gradient {
+            background: linear-gradient(135deg, #115e59 0%, #065f46 100%);
+        }
+
+        .bounce-slow {
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pulse-soft {
+            animation: pulse-soft-key 2s infinite;
+        }
+
+        @keyframes pulse-soft-key {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .shaking {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .success-flash {
+            animation: flashGreen 0.6s ease-out;
+        }
+
+        @keyframes flashGreen {
+            0%, 100% { background-color: transparent; }
+            50% { background-color: rgba(74, 222, 128, 0.4); }
+        }
+
+        /* Zon heretan (Drop Zones) */
+        .drop-zone {
+            transition: all 0.3s ease;
+        }
+        .drop-zone.dragover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #81c784;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4caf50;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.-bottom-12{bottom:-3rem}.-bottom-6{bottom:-1.5rem}.-left-12{left:-3rem}.-left-6{left:-1.5rem}.-right-12{right:-3rem}.-right-2{right:-0.5rem}.-right-4{right:-1rem}.-right-6{right:-1.5rem}.-top-12{top:-3rem}.-top-2{top:-0.5rem}.-top-3{top:-0.75rem}.-top-4{top:-1rem}.-top-6{top:-1.5rem}.bottom-2{bottom:0.5rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.left-10{left:2.5rem}.left-2{left:0.5rem}.left-3{left:0.75rem}.right-2{right:0.5rem}.right-6{right:1.5rem}.top-2{top:0.5rem}.top-3{top:0.75rem}.top-4{top:1rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.my-3{margin-top:0.75rem;margin-bottom:0.75rem}.my-4{margin-top:1rem;margin-bottom:1rem}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-0{height:0px}.h-10{height:2.5rem}.h-12{height:3rem}.h-28{height:7rem}.h-4{height:1rem}.h-40{height:10rem}.h-full{height:100%}.max-h-\[100px\]{max-height:100px}.min-h-\[160px\]{min-height:160px}.min-h-screen{min-height:100vh}.w-0{width:0px}.w-1\/2{width:50%}.w-10{width:2.5rem}.w-12{width:3rem}.w-28{width:7rem}.w-32{width:8rem}.w-40{width:10rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.flex-grow{flex-grow:1}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.cursor-grab{cursor:grab}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.overflow-x-hidden{overflow-x:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-8{border-width:8px}.border-b{border-bottom-width:1px}.border-b-8{border-bottom-width:8px}.border-l-8{border-left-width:8px}.border-r-8{border-right-width:8px}.border-t{border-top-width:1px}.border-t-8{border-top-width:8px}.border-dashed{border-style:dashed}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity, 1))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-emerald-400{--tw-border-opacity:1;border-color:rgb(52 211 153 / var(--tw-border-opacity, 1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-emerald-600{--tw-border-opacity:1;border-color:rgb(5 150 105 / var(--tw-border-opacity, 1))}.border-emerald-800{--tw-border-opacity:1;border-color:rgb(6 95 70 / var(--tw-border-opacity, 1))}.border-indigo-400{--tw-border-opacity:1;border-color:rgb(129 140 248 / var(--tw-border-opacity, 1))}.border-orange-400{--tw-border-opacity:1;border-color:rgb(251 146 60 / var(--tw-border-opacity, 1))}.border-slate-400{--tw-border-opacity:1;border-color:rgb(148 163 184 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.border-b-emerald-200{--tw-border-opacity:1;border-bottom-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-l-transparent{border-left-color:transparent}.border-r-transparent{border-right-color:transparent}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-emerald-700{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.bg-emerald-900{--tw-bg-opacity:1;background-color:rgb(6 78 59 / var(--tw-bg-opacity, 1))}.bg-indigo-500{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.bg-orange-500{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-blue-50{--tw-gradient-from:#eff6ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(239 246 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-500{--tw-gradient-from:#10b981 var(--tw-gradient-from-position);--tw-gradient-to:rgb(16 185 129 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-green-50{--tw-gradient-from:#f0fdf4 var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 253 244 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-red-50{--tw-gradient-from:#fef2f2 var(--tw-gradient-from-position);--tw-gradient-to:rgb(254 242 242 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-emerald-100{--tw-gradient-to:#d1fae5 var(--tw-gradient-to-position)}.to-indigo-100{--tw-gradient-to:#e0e7ff var(--tw-gradient-to-position)}.to-orange-100{--tw-gradient-to:#ffedd5 var(--tw-gradient-to-position)}.to-teal-400{--tw-gradient-to:#2dd4bf var(--tw-gradient-to-position)}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-8xl{font-size:6rem;line-height:1}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.capitalize{text-transform:capitalize}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-wide{letter-spacing:0.025em}.tracking-widest{letter-spacing:0.1em}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15 / var(--tw-text-opacity, 1))}.text-amber-950{--tw-text-opacity:1;color:rgb(69 26 3 / var(--tw-text-opacity, 1))}.text-emerald-100{--tw-text-opacity:1;color:rgb(209 250 229 / var(--tw-text-opacity, 1))}.text-emerald-200{--tw-text-opacity:1;color:rgb(167 243 208 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-emerald-800{--tw-text-opacity:1;color:rgb(6 95 70 / var(--tw-text-opacity, 1))}.text-emerald-950{--tw-text-opacity:1;color:rgb(2 44 34 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-800{--tw-text-opacity:1;color:rgb(55 48 163 / var(--tw-text-opacity, 1))}.text-indigo-950{--tw-text-opacity:1;color:rgb(30 27 75 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-800{--tw-text-opacity:1;color:rgb(154 52 18 / var(--tw-text-opacity, 1))}.text-orange-950{--tw-text-opacity:1;color:rgb(67 20 7 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-900{--tw-text-opacity:1;color:rgb(113 63 18 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-amber-400{-webkit-text-decoration-color:#fbbf24;text-decoration-color:#fbbf24}.underline-offset-4{text-underline-offset:4px}.opacity-10{opacity:0.1}.opacity-15{opacity:0.15}.opacity-20{opacity:0.2}.opacity-50{opacity:0.5}.opacity-60{opacity:0.6}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-amber-200:hover{--tw-bg-opacity:1;background-color:rgb(253 230 138 / var(--tw-bg-opacity, 1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-400:hover{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-500:hover{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-400:hover{--tw-bg-opacity:1;background-color:rgb(129 140 248 / var(--tw-bg-opacity, 1))}.hover\:bg-orange-400:hover{--tw-bg-opacity:1;background-color:rgb(251 146 60 / var(--tw-bg-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-emerald-500:focus{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:cursor-grabbing:active{cursor:grabbing}@media (min-width: 640px){.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:h-48{height:12rem}.md\:min-h-\[220px\]{min-height:220px}.md\:w-48{width:12rem}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:p-10{padding:2.5rem}.md\:p-6{padding:1.5rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 1024px){.lg\:w-1\/3{width:33.333333%}.lg\:w-2\/3{width:66.666667%}.lg\:flex-row{flex-direction:row}}</style></head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden text-slate-800">
+
+    <header class="w-full jungle-gradient text-white py-4 px-6 shadow-md flex justify-between items-center z-10">
+        <div class="flex items-center space-x-3">
+            <span class="text-3xl md:text-4xl">🌴</span>
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold tracking-wide">Rimba Klasifikasi Haiwan</h1>
+                <p class="text-xs md:text-sm text-emerald-200">Sains Tahun 3 SK - Tabiat Pemakanan Haiwan</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <!-- Kawalan Audio -->
+            <button id="btn-audio" onclick="toggleMute()" class="bg-emerald-700 hover:bg-emerald-600 p-2 rounded-full w-10 h-10 flex items-center justify-center transition shadow-inner">
+                <i id="audio-icon" class="fa-solid fa-volume-high"></i>
+            </button>
+            <!-- Restart -->
+            <button onclick="resetMulaPermainan()" class="bg-amber-500 hover:bg-amber-400 text-white font-bold px-4 py-2 rounded-lg transition shadow text-xs md:text-sm flex items-center gap-2">
+                <i class="fa-solid fa-rotate-right"></i> Mula Semula
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4 md:p-6 w-full max-w-7xl mx-auto">
+        
+        <!-- ================= SKRIN 1: MULA PERMAINAN ================= -->
+        <div id="screen-welcome" class="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-6 md:p-10 border-4 border-emerald-500 text-center relative overflow-hidden transition-all duration-500 transform scale-100">
+            <!-- Dekorasi Daun Hutan -->
+            <span class="absolute -top-6 -left-6 text-6xl opacity-20">🌿</span>
+            <span class="absolute -bottom-6 -right-6 text-6xl opacity-20">🍃</span>
+            <span class="absolute top-4 right-6 text-5xl opacity-15">🐅</span>
+            <span class="absolute bottom-6 left-10 text-5xl opacity-15">🐘</span>
+
+            <div class="bg-emerald-50 inline-block p-4 rounded-full mb-4">
+                <span class="text-6xl">🦁🦖🍌</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-black text-emerald-800 mb-2">Selamat Datang, Murid Hebat!</h2>
+            <p class="text-slate-600 mb-6 text-sm md:text-base">Mari belajar cara mengelaskan haiwan berdasarkan tabiat makanannya bersama-sama. Adakah anda bersedia menjadi saintis muda?</p>
+
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-5 mb-6 text-left">
+                <!-- Pilihan Nama Murid -->
+                <label class="block text-amber-900 font-bold mb-2 text-sm md:text-base"><i class="fa-solid fa-user-pen mr-2"></i> Tulis Nama Kamu:</label>
+                <input type="text" id="player-name" placeholder="Contoh: Muhammad / Sarah" class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg text-lg focus:outline-none focus:border-emerald-500 mb-2 font-semibold text-slate-700">
+                <p class="text-xs text-amber-700 italic"><i class="fa-solid fa-circle-info mr-1"></i> Kamu akan belajar bersama Cikgu Yong hari ini!</p>
+            </div>
+
+            <button onclick="mulaBelajar()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xl font-bold py-4 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+                <i class="fa-solid fa-play"></i> Mulakan Pengembaraan
+            </button>
+        </div>
+
+        <!-- ================= SKRIN 2: UTAMA PERMAINAN ================= -->
+        <div id="screen-game" class="hidden w-full flex flex-col lg:flex-row gap-6 relative">
+            
+            <!-- Bahagian Kiri: Guru & Status (Lebar 1/3) -->
+            <div class="w-full lg:w-1/3 flex flex-col gap-4">
+                <!-- Kad Info Murid & Skor -->
+                <div class="bg-white rounded-2xl shadow p-4 border-t-8 border-emerald-600 flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-slate-400">Pemain:</p>
+                        <p id="display-name" class="font-bold text-lg text-slate-700">-</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-slate-400">Markah Bintang:</p>
+                        <div class="flex items-center text-amber-500 text-xl font-bold gap-1" id="star-score">
+                            ⭐ <span id="score-val">0</span> / <span id="total-val">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watak Cikgu Dinamik & Bubbles -->
+                <div class="bg-white rounded-2xl shadow p-6 border-b-8 border-emerald-600 flex flex-col items-center relative overflow-hidden flex-grow justify-center">
+                    <!-- Hiasan hutan mini -->
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-emerald-50 rounded-full opacity-50 flex items-center justify-center text-xl">🌴</div>
+
+                    <!-- Guru Avatar: Cikgu Yong 👩‍🏫 -->
+                    <div id="teacher-avatar" class="text-8xl bounce-slow mb-4 filter drop-shadow">👩‍🏫</div>
+                    <div class="bg-emerald-600 text-white font-bold px-4 py-1 rounded-full text-xs mb-3 shadow" id="teacher-label">Cikgu Yong</div>
+
+                    <!-- Gelembung Dialog Guru -->
+                    <div class="relative bg-emerald-50 border-2 border-emerald-200 text-emerald-950 p-4 rounded-xl text-center text-sm md:text-base font-medium max-w-full shadow-inner">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-emerald-200"></div>
+                        <p id="teacher-bubble">Hai sayang! Selamat datang ke Rimba Sains Cikgu!</p>
+                    </div>
+
+                    <!-- Suara / Teks Galakan -->
+                    <div id="cheer-container" class="mt-4 hidden animate-bounce bg-amber-400 text-amber-950 px-4 py-2 rounded-lg font-bold text-center text-xs md:text-sm shadow">
+                        ⭐ Syabas! Betul sekali!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bahagian Kanan: Papan Klasifikasi & Pilihan Kad (Lebar 2/3) -->
+            <div class="w-full lg:w-2/3 flex flex-col gap-4">
+                
+                <!-- PROGRESS BAR -->
+                <div class="bg-white rounded-xl shadow p-3 flex items-center justify-between gap-4">
+                    <span class="text-xs font-bold text-slate-500 whitespace-nowrap">Kemajuan Rimba:</span>
+                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden relative border shadow-inner">
+                        <div id="progress-bar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-0 transition-all duration-500"></div>
+                    </div>
+                    <span id="progress-text" class="text-xs font-bold text-emerald-700 whitespace-nowrap">0 / 0</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="drop-zones-container">
+                    
+                    <!-- Kategori 1: Tumbuhan Sahaja (Herbivor) -->
+                    <div id="zone-plants" data-diet="plants" class="drop-zone bg-gradient-to-b from-green-50 to-emerald-100 border-4 border-dashed border-emerald-400 rounded-2xl p-4 text-center min-h-[160px] md:min-h-[220px] flex flex-col justify-between shadow hover:shadow-lg relative overflow-hidden">
+                        <div class="absolute -top-2 -right-2 text-4xl opacity-10">🌿</div>
+                        <div>
+                            <div class="bg-emerald-500 text-white py-1 px-3 rounded-full text-xs font-black inline-block uppercase mb-1 shadow-sm">HERBIVOR</div>
+                            <h3 class="text-base md:text-lg font-bold text-emerald-950 flex items-center justify-center gap-1">
+                                🥦 Tumbuhan Sahaja
+                            </h3>
+                            <p class="text-xxs md:text-xs text-emerald-800 leading-tight">Makan daun, herba, buah atau batang pokok sahaja.</p>
+                        </div>
+                        <div class="my-3 flex flex-wrap justify-center gap-2 max-h-[100px] overflow-y-auto" id="list-plants">
+                            <!-- Haiwan yang diletakkan di sini -->
+                            <span class="text-xs text-emerald-400 italic py-2">Seret haiwan ke sini</span>
+                        </div>
+                    </div>
+
+                    <!-- Kategori 2: Haiwan Lain/Daging Sahaja (Karnivor) -->
+                    <div id="zone-meat" data-diet="meat" class="drop-zone bg-gradient-to-b from-red-50 to-orange-100 border-4 border-dashed border-orange-400 rounded-2xl p-4 text-center min-h-[160px] md:min-h-[220px] flex flex-col justify-between shadow hover:shadow-lg relative overflow-hidden">
+                        <div class="absolute -top-2 -right-2 text-4xl opacity-10">🥩</div>
+                        <div>
+                            <div class="bg-orange-500 text-white py-1 px-3 rounded-full text-xs font-black inline-block uppercase mb-1 shadow-sm">KARNIVOR</div>
+                            <h3 class="text-base md:text-lg font-bold text-orange-950 flex items-center justify-center gap-1">
+                                🥩 Haiwan Lain Sahaja
+                            </h3>
+                            <p class="text-xxs md:text-xs text-orange-800 leading-tight">Makan daging, serangga atau bangkai haiwan sahaja.</p>
+                        </div>
+                        <div class="my-3 flex flex-wrap justify-center gap-2 max-h-[100px] overflow-y-auto" id="list-meat">
+                            <!-- Haiwan yang diletakkan di sini -->
+                            <span class="text-xs text-orange-400 italic py-2">Seret haiwan ke sini</span>
+                        </div>
+                    </div>
+
+                    <!-- Kategori 3: Tumbuhan & Haiwan (Omnivor) -->
+                    <div id="zone-both" data-diet="both" class="drop-zone bg-gradient-to-b from-blue-50 to-indigo-100 border-4 border-dashed border-indigo-400 rounded-2xl p-4 text-center min-h-[160px] md:min-h-[220px] flex flex-col justify-between shadow hover:shadow-lg relative overflow-hidden">
+                        <div class="absolute -top-2 -right-2 text-4xl opacity-10">🍇🐠</div>
+                        <div>
+                            <div class="bg-indigo-500 text-white py-1 px-3 rounded-full text-xs font-black inline-block uppercase mb-1 shadow-sm">OMNIVOR</div>
+                            <h3 class="text-base md:text-lg font-bold text-indigo-950 flex items-center justify-center gap-1">
+                                🍕 Kedua-duanya
+                            </h3>
+                            <p class="text-xxs md:text-xs text-indigo-800 leading-tight">Makan tumbuh-tumbuhan dan juga haiwan lain.</p>
+                        </div>
+                        <div class="my-3 flex flex-wrap justify-center gap-2 max-h-[100px] overflow-y-auto" id="list-both">
+                            <!-- Haiwan yang diletakkan di sini -->
+                            <span class="text-xs text-indigo-400 italic py-2">Seret haiwan ke sini</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-6 border-4 border-amber-400 text-center relative flex flex-col items-center justify-between flex-grow">
+                    
+                    <div class="absolute top-3 left-3">
+                        <button onclick="bukaPetunjuk()" class="bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold px-3 py-1 rounded-full text-xs flex items-center gap-1 shadow-sm transition">
+                            💡 Petunjuk Cikgu
+                        </button>
+                    </div>
+
+                    <div class="w-full flex flex-col items-center my-4">
+                        <!-- Petunjuk Mini terapung atas Kad -->
+                        <div id="hint-bubble" class="hidden mb-3 bg-yellow-50 text-yellow-900 border border-yellow-200 text-xs md:text-sm py-2 px-4 rounded-xl text-center max-w-md shadow-sm">
+                            HINT: "Suka rumput hijau..."
+                        </div>
+
+                        <!-- KAD HAIWAN UTAMA - Boleh diheret -->
+                        <div id="active-animal-card" draggable="true" class="pulse-soft w-40 h-40 md:w-48 md:h-48 bg-amber-50 rounded-2xl border-4 border-amber-300 shadow-md cursor-grab active:cursor-grabbing flex flex-col items-center justify-center p-4 transition-all duration-300 transform">
+                            <span id="animal-emoji" class="text-6xl md:text-7xl filter drop-shadow">🐘</span>
+                            <span id="animal-name" class="mt-2 text-xl md:text-2xl font-black text-slate-800 tracking-wide">Gajah</span>
+                            <div class="text-[10px] text-amber-500 uppercase font-black tracking-widest mt-1"><i class="fa-solid fa-arrows-up-down-left-right mr-1"></i> Heret Saya!</div>
+                        </div>
+                    </div>
+
+                    <!-- BUTANG PILIHAN ALTERNATIF (Untuk peranti pintar / Tiada fungsi heret) -->
+                    <div class="w-full">
+                        <p class="text-slate-500 text-xs font-bold mb-2">Atau klik jawapan betul di bawah:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <button onclick="pilihKategoriButang('plants')" class="bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2.5 px-4 rounded-xl shadow transition duration-200 text-sm flex items-center justify-center gap-1.5 transform hover:scale-[1.02] active:scale-[0.98]">
+                                🥦 Makan Tumbuhan
+                            </button>
+                            <button onclick="pilihKategoriButang('meat')" class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2.5 px-4 rounded-xl shadow transition duration-200 text-sm flex items-center justify-center gap-1.5 transform hover:scale-[1.02] active:scale-[0.98]">
+                                🥩 Makan Daging
+                            </button>
+                            <button onclick="pilihKategoriButang('both')" class="bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-2.5 px-4 rounded-xl shadow transition duration-200 text-sm flex items-center justify-center gap-1.5 transform hover:scale-[1.02] active:scale-[0.98]">
+                                🍇🥩 Kedua-duanya
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SKRIN 3: SIJIL & TAMAT ================= -->
+        <div id="screen-certificate" class="hidden w-full max-w-3xl bg-white rounded-3xl shadow-2xl p-6 md:p-10 border-8 border-emerald-600 text-center relative overflow-hidden">
+            <!-- Confetti & Ribbon -->
+            <div class="absolute -top-12 -left-12 w-28 h-28 bg-emerald-50 rounded-full opacity-60"></div>
+            <div class="absolute -bottom-12 -right-12 w-28 h-28 bg-emerald-50 rounded-full opacity-60"></div>
+
+            <div class="text-6xl mb-2">🏆🎉👑</div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-emerald-800">Syabas! Pengembaraan Selesai!</h2>
+            <p class="text-slate-500 text-sm md:text-base mt-2">Anda telah berjaya menamatkan Rimba Klasifikasi Haiwan Sains Tahun 3.</p>
+
+            <!-- BINGKAI SIJIL KECEMERLANGAN -->
+            <div class="my-6 p-6 border-4 double-border border-amber-400 bg-amber-50 rounded-2xl relative text-center shadow-inner max-w-2xl mx-auto">
+                <span class="absolute top-2 left-2 text-2xl">🌱</span>
+                <span class="absolute top-2 right-2 text-2xl">🌟</span>
+                <span class="absolute bottom-2 left-2 text-2xl">🎓</span>
+                <span class="absolute bottom-2 right-2 text-2xl">🐞</span>
+
+                <h3 class="text-lg md:text-xl font-bold uppercase tracking-widest text-amber-800 mb-1">Sijil Penghargaan</h3>
+                <p class="text-xxs md:text-xs text-amber-700 uppercase font-semibold">Sekolah Kebangsaan Rimba Raya</p>
+                
+                <hr class="border-amber-300 my-3 w-1/2 mx-auto">
+
+                <p class="text-xs md:text-sm italic text-slate-600">Dianugerahkan dengan bangganya kepada:</p>
+                <p id="cert-name" class="text-2xl md:text-3xl font-black text-emerald-800 my-2 underline decoration-amber-400 underline-offset-4 capitalize">Muhammad Al-Fatih</p>
+                
+                <p class="text-xs md:text-sm text-slate-700 max-w-md mx-auto mt-2 leading-relaxed">
+                    Kerana menunjukkan prestasi cemerlang dan menguasai kemahiran saintifik mengelaskan haiwan berdasarkan tabiat makanannya: **Herbivor, Karnivor &amp; Omnivor**.
+                </p>
+
+                <div class="mt-5 grid grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <p class="text-xxs text-slate-400 uppercase">Peratus Skor</p>
+                        <p id="cert-score" class="text-xl font-bold text-amber-700">100%</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xxs text-slate-400 uppercase">Tarikh Pencapaian</p>
+                        <p id="cert-date" class="text-xs font-bold text-slate-700">07/07/2026</p>
+                    </div>
+                </div>
+
+                <!-- Tanda Tangan Guru -->
+                <div class="mt-6 flex flex-col items-center justify-center">
+                    <div class="w-32 border-b border-dashed border-slate-400 h-10 relative flex items-center justify-center">
+                        <span id="cert-signature" class="text-sm font-semibold italic text-emerald-700 font-serif">Cikgu Yong</span>
+                    </div>
+                    <p class="text-xxs text-slate-400 mt-1">Guru Sains Tahun 3</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="kongsiSijil()" class="bg-amber-500 hover:bg-amber-400 text-white font-extrabold px-6 py-3 rounded-xl shadow-lg transition transform hover:scale-105 active:scale-95 text-sm md:text-base flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-copy"></i> Salin Nama Sijil
+                </button>
+                <button onclick="resetMulaPermainan()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3 rounded-xl shadow-lg transition transform hover:scale-105 active:scale-95 text-sm md:text-base flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-right"></i> Main Semula
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-3 bg-emerald-900 text-emerald-100 text-center text-xs md:text-sm border-t border-emerald-800 z-10">
+        <p>Hak Cipta Terpelihara © 2026 | Aplikasi Pembelajaran Sains Tahun 3 SK</p>
+    </footer>
+
+    <script>
+        /* ================= KESAN AUDIO SINTESIS (WEB AUDIO API) ================= */
+        let isMuted = false;
+        let audioCtx = null;
+
+        // Inisialisasi Audio Context secara selamat (Failsafe)
+        function initAudio() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+            } catch (error) {
+                console.warn("Web Audio tidak disokong atau gagal bermula:", error);
+            }
+        }
+
+        // Fungsi nada synth standard
+        function playTone(freq, type, duration) {
+            if (isMuted || !audioCtx) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = type || 'sine';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                console.warn("Bunyi gagal dimainkan:", e);
+            }
+        }
+
+        function playClickSound() {
+            playTone(400, 'sine', 0.1);
+        }
+
+        function playCorrectSound() {
+            if (isMuted || !audioCtx) return;
+            try {
+                playTone(523.25, 'sine', 0.15); // C5
+                setTimeout(() => playTone(659.25, 'sine', 0.2), 150); // E5
+            } catch (e) {}
+        }
+
+        function playWrongSound() {
+            if (isMuted || !audioCtx) return;
+            try {
+                playTone(220, 'triangle', 0.3); // A3 (Suara buzzer lembut)
+            } catch (e) {}
+        }
+
+        function toggleMute() {
+            isMuted = !isMuted;
+            const icon = document.getElementById('audio-icon');
+            if (isMuted) {
+                icon.className = 'fa-solid fa-volume-xmark';
+                icon.parentElement.classList.replace('bg-emerald-700', 'bg-rose-700');
+            } else {
+                icon.className = 'fa-solid fa-volume-high';
+                icon.parentElement.classList.replace('bg-rose-700', 'bg-emerald-700');
+                initAudio();
+                playClickSound();
+            }
+        }
+
+        /* ================= DATA HAIWAN SAINS TAHUN 3 ================= */
+        const databaseHaiwan = [
+            { id: 'lembu', name: 'Lembu', diet: 'plants', emoji: '🐄', hint: 'Saya suka berjalan di padang rumput sambil meragut daun-daun hijau!' },
+            { id: 'arnab', name: 'Arnab', diet: 'plants', emoji: '🐇', hint: 'Saya suka melompat ke sana sini mencari sayuran manis dan lobak merah.' },
+            { id: 'gajah', name: 'Gajah', diet: 'plants', emoji: '🐘', hint: 'Tubuh saya besar! Makanan kegemaran saya ialah tebu dan batang pokok pisang.' },
+            { id: 'belalang', name: 'Belalang', diet: 'plants', emoji: '🦗', hint: 'Saya adalah serangga pelompat kecil yang suka mengunyah dedaun pokok.' },
+            
+            { id: 'harimau', name: 'Harimau', diet: 'meat', emoji: '🐅', hint: 'Saya ada gigi taring yang sangat tajam untuk memburu daging mangsa.' },
+            { id: 'helang', name: 'Helang', diet: 'meat', emoji: '🦅', hint: 'Saya terbang tinggi mencari mangsa berdarah seperti tikus atau ular.' },
+            { id: 'buaya', name: 'Buaya', diet: 'meat', emoji: '🐊', hint: 'Saya pemangsa reptilia di dalam air yang membaham daging ikan dan ayam.' },
+            { id: 'singa', name: 'Singa', diet: 'meat', emoji: '🦁', hint: 'Saya digelar Raja Rimba! Saya hanya memburu haiwan lain di padang rumput.' },
+            
+            { id: 'ayam', name: 'Ayam', diet: 'both', emoji: '🐓', hint: 'Saya seronok makan bijirin jagung, tetapi saya juga mematuk cacing tanah yang geli!' },
+            { id: 'monyet', name: 'Monyet', diet: 'both', emoji: '🐒', hint: 'Saya suka makan pisang manis, tetapi saya juga menangkap serangga kecil di dahan.' },
+            { id: 'itik', name: 'Itik', diet: 'both', emoji: '🦆', hint: 'Saya makan tumbuhan air lembut dan juga anak ikan kecil yang berenang.' },
+            { id: 'beruang', name: 'Beruang', diet: 'both', emoji: '🐻', hint: 'Saya memetik buah beri segar, tetapi saya juga handal menangkap ikan salmon di sungai.' }
+        ];
+
+        /* ================= STATE PERMAINAN ================= */
+        let senaraiMainHaiwan = [];
+        let indexSemasa = 0;
+        let markahBetul = 0;
+        let namaPemain = "Murid Hebat";
+        
+        // Cikgu Yong Pembimbing Tunggal
+        const cikguYong = {
+            nama: "Cikgu Yong",
+            emoji: "👩‍🏫",
+            intro: "Hai sayang! Saya Cikgu Yong. Jom kita belajar sains rimba dengan gembira hari ini!",
+            soalan: "Tolong Cikgu! Di manakah kategori yang betul untuk haiwan **[ANIMAL]** ini?",
+            betul: [
+                "Wah, betul sekali! Hebatlah kamu, [NAME]!",
+                "Tepat sekali! Murid Cikgu yang ini memang bijak!",
+                "Luar biasa! [ANIMAL] sememangnya makan jenis makanan ini."
+            ],
+            salah: [
+                "Ooo, kurang tepat sedikit sayang. Mari cuba lagi ya!",
+                "Bukan begitu, sayang. Cuba fikirkan semula makanan bagi [ANIMAL].",
+                "Tidak mengapa! Kita belajar daripada kesilapan. Cuba sekali lagi!"
+            ],
+            tamat: "Syabas sayang! Kamu sudah berjaya mengelaskan kesemua haiwan dengan cemerlang!"
+        };
+
+        const galakanBetul = ["SYABAS!", "HEBAT!", "PINTAR!", "TERBAIK!", "BIJAK!"];
+
+        /* ================= PERSURATAN & LOGIK JALANKAN ================= */
+        window.onload = function() {
+            // Sediakan input nama menggunakan kekunci Enter
+            const inputNameElem = document.getElementById('player-name');
+            if (inputNameElem) {
+                inputNameElem.addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') {
+                        mulaBelajar();
+                    }
+                });
+            }
+
+            // Jalankan persediaan heretan (Drag and Drop)
+            setUpDragAndDrop();
+        };
+
+        // Menukar Skrin Permulaan ke Skrin Utama Permainan secara lancar
+        function mulaBelajar() {
+            initAudio();
+            playClickSound();
+
+            const inputNama = document.getElementById('player-name').value.trim();
+            if (inputNama !== "") {
+                namaPemain = inputNama;
+            } else {
+                namaPemain = "Murid Bijak";
+            }
+
+            // Kemaskini nama di pelbagai lokasi UI
+            document.getElementById('display-name').textContent = namaPemain;
+            document.getElementById('cert-name').textContent = namaPemain;
+
+            // Memasang Profil Cikgu Yong
+            document.getElementById('teacher-avatar').textContent = cikguYong.emoji;
+            document.getElementById('teacher-label').textContent = cikguYong.nama;
+            document.getElementById('teacher-bubble').innerHTML = cikguYong.intro;
+            document.getElementById('cert-signature').textContent = cikguYong.nama;
+
+            // Mengacak senarai haiwan untuk pembelajaran dinamik
+            senaraiMainHaiwan = [...databaseHaiwan].sort(() => Math.random() - 0.5);
+            indexSemasa = 0;
+            markahBetul = 0;
+
+            // Set data kuiz
+            document.getElementById('total-val').textContent = senaraiMainHaiwan.length;
+            document.getElementById('score-val').textContent = "0";
+
+            // Tukar skrin visual
+            document.getElementById('screen-welcome').classList.add('hidden');
+            document.getElementById('screen-certificate').classList.add('hidden');
+            document.getElementById('screen-game').classList.remove('hidden');
+
+            kemaskiniKadHaiwan();
+            kosongkanKawasanPengelasan();
+        }
+
+        // Mengembalikan keadaan visual bakul klasifikasi ke keadaan sedia kala
+        function kosongkanKawasanPengelasan() {
+            const listPlants = document.getElementById('list-plants');
+            const listMeat = document.getElementById('list-meat');
+            const listBoth = document.getElementById('list-both');
+
+            listPlants.innerHTML = '<span class="text-xs text-emerald-400 italic py-2">Seret haiwan ke sini</span>';
+            listMeat.innerHTML = '<span class="text-xs text-orange-400 italic py-2">Seret haiwan ke sini</span>';
+            listBoth.innerHTML = '<span class="text-xs text-indigo-400 italic py-2">Seret haiwan ke sini</span>';
+        }
+
+        // Kemaskini Kad Haiwan Aktif di Bawah
+        function kemaskiniKadHaiwan() {
+            if (indexSemasa >= senaraiMainHaiwan.length) {
+                tamatPermainan();
+                return;
+            }
+
+            const haiwan = senaraiMainHaiwan[indexSemasa];
+            
+            // Kemaskini visual kad aktif
+            const emoji = document.getElementById('animal-emoji');
+            const nama = document.getElementById('animal-name');
+
+            emoji.textContent = haiwan.emoji;
+            nama.textContent = haiwan.name;
+
+            // Sembunyikan pembayang yang terbuka
+            document.getElementById('hint-bubble').classList.add('hidden');
+
+            // Kemaskini dialog soalan Cikgu Yong
+            const formatSoalan = cikguYong.soalan.replace('[ANIMAL]', haiwan.name);
+            document.getElementById('teacher-bubble').innerHTML = formatSoalan;
+
+            // Kemaskini bar status kemajuan
+            const peratus = (indexSemasa / senaraiMainHaiwan.length) * 100;
+            document.getElementById('progress-bar').style.width = `${peratus}%`;
+            document.getElementById('progress-text').textContent = `${indexSemasa} / ${senaraiMainHaiwan.length}`;
+        }
+
+        // Memaparkan pembayang berdasarkan buku teks
+        function bukaPetunjuk() {
+            playClickSound();
+            const petunjukBub = document.getElementById('hint-bubble');
+            const haiwanSemasa = senaraiMainHaiwan[indexSemasa];
+            
+            petunjukBub.textContent = `💡 Petunjuk Cikgu: "${haiwanSemasa.hint}"`;
+            petunjukBub.classList.toggle('hidden');
+        }
+
+        /* ================= SISTEM DRAG & DROP DESKTOP ================= */
+        function setUpDragAndDrop() {
+            const kad = document.getElementById('active-animal-card');
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            kad.addEventListener('dragstart', function(e) {
+                e.dataTransfer.setData('text/plain', senaraiMainHaiwan[indexSemasa].diet);
+                kad.classList.add('opacity-50');
+            });
+
+            kad.addEventListener('dragend', function() {
+                kad.classList.remove('opacity-50');
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    zone.classList.add('dragover');
+                });
+
+                zone.addEventListener('dragleave', function() {
+                    zone.classList.remove('dragover');
+                });
+
+                zone.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    zone.classList.remove('dragover');
+                    const targetDiet = zone.getAttribute('data-diet');
+                    prosesJawapan(targetDiet);
+                });
+            });
+        }
+
+        /* ================= PILIHAN JAWAPAN (BUTANG ATAU JATUHAN) ================= */
+        function pilihKategoriButang(dietPilihan) {
+            playClickSound();
+            prosesJawapan(dietPilihan);
+        }
+
+        // Memproses keputusan jawapan murid
+        function prosesJawapan(dietPilihan) {
+            const haiwanSemasa = senaraiMainHaiwan[indexSemasa];
+            const kadLatar = document.getElementById('screen-game');
+            const cheerContainer = document.getElementById('cheer-container');
+
+            if (dietPilihan === haiwanSemasa.diet) {
+                // --- KES JAWAPAN BETUL ---
+                markahBetul++;
+                playCorrectSound();
+                
+                // Animasi letupan konfeti di tengah skrin
+                confetti({
+                    particleCount: 50,
+                    spread: 80,
+                    origin: { y: 0.7 }
+                });
+
+                // Kilatan visual hijau seketika
+                kadLatar.classList.add('success-flash');
+                setTimeout(() => kadLatar.classList.remove('success-flash'), 600);
+
+                // Tambahkan elemen haiwan ke dalam bakul kategori yang betul
+                let namaZon = '';
+                if (dietPilihan === 'plants') namaZon = 'list-plants';
+                else if (dietPilihan === 'meat') namaZon = 'list-meat';
+                else if (dietPilihan === 'both') namaZon = 'list-both';
+
+                const targetList = document.getElementById(namaZon);
+                if (targetList.innerHTML.includes('Seret haiwan ke sini')) {
+                    targetList.innerHTML = '';
+                }
+                
+                targetList.innerHTML += `
+                    <span class="inline-flex items-center gap-1 bg-white border border-slate-300 px-2.5 py-1 rounded-full text-xs font-bold shadow-sm animate-bounce">
+                        ${haiwanSemasa.emoji} ${haiwanSemasa.name}
+                    </span>
+                `;
+
+                // Penjanaan maklum balas gembira Cikgu Yong
+                const listPujian = cikguYong.betul;
+                const rawPujian = listPujian[Math.floor(Math.random() * listPujian.length)];
+                const hasilPujian = rawPujian
+                    .replace('[NAME]', namaPemain)
+                    .replace('[ANIMAL]', haiwanSemasa.name);
+
+                document.getElementById('teacher-bubble').innerHTML = hasilPujian;
+
+                // Memaparkan kotak motivasi gembira
+                const perkataanGalakan = galakanBetul[Math.floor(Math.random() * galakanBetul.length)];
+                cheerContainer.innerHTML = `⭐ ${perkataanGalakan}! Betul sekali!`;
+                cheerContainer.classList.remove('hidden');
+                setTimeout(() => cheerContainer.classList.add('hidden'), 1500);
+
+                // Kemaskini skor
+                document.getElementById('score-val').textContent = markahBetul;
+
+                // Menuju ke soalan seterusnya selepas penangguhan masa pendek
+                indexSemasa++;
+                setTimeout(kemaskiniKadHaiwan, 1500);
+
+            } else {
+                // --- KES JAWAPAN SALAH ---
+                playWrongSound();
+
+                // Animasi bergegar menandakan ralat
+                const kadAktif = document.getElementById('active-animal-card');
+                kadAktif.classList.add('shaking');
+                setTimeout(() => kadAktif.classList.remove('shaking'), 500);
+
+                // Nasihat bimbingan guru
+                const listNasihat = cikguYong.salah;
+                const rawNasihat = listNasihat[Math.floor(Math.random() * listNasihat.length)];
+                const hasilNasihat = rawNasihat.replace('[ANIMAL]', haiwanSemasa.name);
+
+                document.getElementById('teacher-bubble').innerHTML = hasilNasihat;
+            }
+        }
+
+        /* ================= TAMAT & PAPARAN SIJIL ================= */
+        function tamatPermainan() {
+            // Sediakan peratusan markah
+            const peratusSkor = Math.round((markahBetul / databaseHaiwan.length) * 100);
+            document.getElementById('cert-score').textContent = `${peratusSkor}%`;
+
+            // Letakkan tarikh semasa
+            const hariIni = new Date();
+            const formatTarikh = `${String(hariIni.getDate()).padStart(2, '0')}/${String(hariIni.getMonth() + 1).padStart(2, '0')}/${hariIni.getFullYear()}`;
+            document.getElementById('cert-date').textContent = formatTarikh;
+
+            // Sembunyikan skrin permainan, buka skrin sijil penghargaan
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-certificate').classList.remove('hidden');
+
+            // Letupan bunga api konfeti penuh kejayaan
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Menyalin nama murid ke papan keratan sebagai fungsi kongsi sijil
+        function kongsiSijil() {
+            playClickSound();
+            const rawText = `Saya, ${namaPemain} telah berjaya menamatkan Rimba Klasifikasi Haiwan bersama Cikgu Yong!`;
+            
+            // Menggunakan kaedah sandaran penyalinan yang selamat dalam iFrame
+            const el = document.createElement('textarea');
+            el.value = rawText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            // Menunjukkan notifikasi visual tersendiri (menggantikan alert)
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white px-6 py-3.5 rounded-2xl text-xs md:text-sm font-semibold shadow-2xl z-50 flex items-center gap-2 border border-slate-700 animate-bounce';
+            toast.innerHTML = '✨ <span class="text-amber-400">Pemberitahuan:</span> Ucapan kejayaan telah disalin! Boleh tampal di WhatsApp/Telegram.';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        // Mula semula permainan ke skrin welcome
+        function resetMulaPermainan() {
+            playClickSound();
+            document.getElementById('player-name').value = '';
+            document.getElementById('screen-certificate').classList.add('hidden');
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-welcome').classList.remove('hidden');
+        }
+    </script>
+
+</body></html>
